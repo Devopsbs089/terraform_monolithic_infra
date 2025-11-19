@@ -5,6 +5,12 @@ terraform {
       version = "4.49.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name  = "bhinfra"
+    storage_account_name = "bhstorage32"
+    container_name       = "bhcontainer"
+    key                  = "terraform.tfstate"
+}
 }
 
 provider "azurerm" {
